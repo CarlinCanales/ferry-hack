@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: url('./background.png');
-  background-size: contain;
+  background-size: cover;
 `;
 
 export const Riders = styled.span`
@@ -19,12 +19,14 @@ export const Riders = styled.span`
 
 export const ElapsedTime = styled.div<{ color: string }>`
   position: absolute;
-  top: 373px;
-  left: 61px;
-  font-size: 60px;
+  top: 369px;
+  left: 75px;
+  font-size: 62px;
   padding: 0.2rem;
   background: #f8f8f8;
   color: ${(props) => props.color};
+  letter-spacing: 0.1rem;
+  // opacity: 0.3;
 `;
 
 export const Activated = styled.time`
