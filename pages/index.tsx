@@ -88,6 +88,7 @@ const Home = (): JSX.Element => {
       <Expires>{`EXPIRES AT ${hourPart}:${minutePart} PM`}</Expires>
       <Activated>{`DATE ACTIVATED: ${monthPart}/${dayPart}/${yearPart}`}</Activated>
       <Code>
+        {/* @ts-ignore */}
         <QRCode size={166} value={qrValue} level="H" />
       </Code>
       <Dialog isOpen={isOpen}>
