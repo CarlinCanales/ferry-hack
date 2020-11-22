@@ -21,6 +21,7 @@ const Home = (): JSX.Element => {
   const [dayPart, setDay] = useState('');
   const [yearPart, setYear] = useState('');
   const [timeRemaining, setTimeRemaining] = useState('00:59:00');
+  // const [timeRemaining, setTimeRemaining] = useState('00:12:14');
   const [color, setColor] = useState('#000');
   const [qrValue, setQrValue] = useState(getQrValue());
   const [numberOfRiders, setNumberOfRiders] = useState('4');
@@ -69,7 +70,7 @@ const Home = (): JSX.Element => {
 
   const toggleOpen = useCallback(() => {
     setIsOpen(!isOpen);
-  }, []);
+  }, [isOpen]);
 
   return (
     <Container>
@@ -93,10 +94,11 @@ const Home = (): JSX.Element => {
       <Activated>{`DATE ACTIVATED: ${monthPart}/${dayPart}/${yearPart}`}</Activated>
       <Code>
         {/* @ts-ignore */}
-        <QRCode size={166} value={qrValue} level="H" />
+        <QRCode size={183} value={qrValue} level="H" />
       </Code>
       <Dialog isOpen={isOpen}>
-        <input type="number" step={1} onChange={handleChange} onBlur={toggleOpen} />
+        <input type="number" step={1} onChange={handleChange} />
+        <span onClick={toggleOpen}>Close</span>
       </Dialog>
     </Container>
   );
