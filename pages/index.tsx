@@ -81,6 +81,9 @@ const Home = (): JSX.Element => {
           href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
           rel="stylesheet"
         />
+        <link rel="manifest" href="manifest.webmanifest" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-wep-app-capable" content="yes" />
       </Head>
       <GlobalStyles />
       <Riders onClick={toggleOpen}>{numberOfRiders}</Riders>
