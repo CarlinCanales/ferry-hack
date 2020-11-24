@@ -97,7 +97,14 @@ const Home = (): JSX.Element => {
         <QRCode size={183} value={qrValue} level="H" />
       </Code>
       <Dialog isOpen={isOpen}>
-        <input type="number" step={1} onChange={handleChange} />
+        <select>
+          {new Array(10).fill(null).map((num, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <option key={index} value={index + 1}>
+              {index + 1}
+            </option>
+          ))}
+        </select>
         <span onClick={toggleOpen}>Close</span>
       </Dialog>
     </Container>
