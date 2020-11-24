@@ -65,7 +65,7 @@ const Home = (): JSX.Element => {
     setQrValue(getQrValue());
   }, 6000);
 
-  const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
     setNumberOfRiders(e.target.value);
   }, []);
 
@@ -98,7 +98,7 @@ const Home = (): JSX.Element => {
         <QRCode size={183} value={qrValue} level="H" />
       </Code>
       <Dialog isOpen={isOpen}>
-        <select>
+        <select onChange={handleChange}>
           {new Array(10).fill(null).map((num, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <option key={index} value={index + 1}>
