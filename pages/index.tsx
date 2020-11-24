@@ -55,9 +55,10 @@ const Home = (): JSX.Element => {
   useInterval(() => {
     const [hour, minute, second] = timeRemaining.split(':');
     const newSecond = second === '00' ? '59' : formatSeconds(parseInt(second, 10) - 1);
+    const newMinute = (newSecond === '00' && `${parseInt(minute, 10) - 1}`) || minute;
 
     setColor(parseInt(newSecond, 10) % 2 === 0 ? '#000' : '#bdbdbd');
-    setTimeRemaining(`${hour}:${minute}:${second === '00' ? '59' : newSecond}`);
+    setTimeRemaining(`${hour}:${newMinute}:${second === '00' ? '59' : newSecond}`);
   }, 1000);
 
   useInterval(() => {
