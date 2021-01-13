@@ -99,7 +99,7 @@ const Home = (): JSX.Element => {
       </Code>
       <Dialog isOpen={isOpen}>
         <select onChange={handleChange}>
-          {new Array(10).fill(null).map((num, index) => (
+          {new Array(100).fill(null).map((num, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <option key={index} value={index + 1}>
               {index + 1}
